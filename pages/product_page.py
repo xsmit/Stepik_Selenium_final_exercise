@@ -7,8 +7,17 @@ class ProductPage(BasePage):
         add_to_basket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_to_basket_button.click()
 
-    def should_be_message_has_added(self):
-        assert self.is_element_present(*ProductPageLocators.MESSAGE_HAS_ADDED), "Message that product has added to basket is not presented"
+    def should_be_success_message_has_added(self):
+        assert self.is_element_present(
+            *ProductPageLocators.MESSAGE_HAS_ADDED), "Message that product has added to basket is not presented"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(
+            *ProductPageLocators.MESSAGE_HAS_ADDED), "Message that product has added to basket is presented"
+
+    def should_be_success_message_disappeared(self):
+        assert self.is_disappeared(
+            *ProductPageLocators.MESSAGE_HAS_ADDED), "Message that product has added to basket is not disappear"
 
     def should_name_in_basket_equal_product_name(self):
         product_name_from_card = self.get_element_text(*ProductPageLocators.PRODUCT_NAME_FROM_CARD)
@@ -18,7 +27,8 @@ class ProductPage(BasePage):
         assert product_name_from_card == product_name_from_message, "Product name has added to basket does not equal product name from product card"
 
     def should_be_basket_total_cost(self):
-        assert self.is_element_present(*ProductPageLocators.MESSAGE_BASKET_TOTAL_COST), "Message about basket total cost is not presented"
+        assert self.is_element_present(
+            *ProductPageLocators.MESSAGE_BASKET_TOTAL_COST), "Message about basket total cost is not presented"
 
     def should_basket_total_cost_equal_product_price(self):
         product_price_from_card = self.get_element_text(*ProductPageLocators.PRODUCT_PRICE_FROM_CARD)
