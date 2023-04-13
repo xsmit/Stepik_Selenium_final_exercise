@@ -24,7 +24,8 @@ class ProductPage(BasePage):
         assert product_name_from_card is not None, "Product name in product card does not exist"
         product_name_from_message = self.get_element_text(*ProductPageLocators.PRODUCT_NAME_FROM_HAS_ADDED_MESSAGE)
         assert product_name_from_message is not None, "Product name in basket message does no exist"
-        assert product_name_from_card == product_name_from_message, "Product name has added to basket does not equal product name from product card"
+        assert product_name_from_card == product_name_from_message, \
+            "Product name has added to basket does not equal product name from product card"
 
     def should_be_basket_total_cost(self):
         assert self.is_element_present(
@@ -35,4 +36,5 @@ class ProductPage(BasePage):
         assert product_price_from_card is not None, "Price in product card does not exist"
         product_price_from_message = self.get_element_text(*ProductPageLocators.PRODUCT_PRICE_FROM_MESSAGE_TOTAL_COST)
         assert product_price_from_message is not None, "Total basket cost does not exist"
-        assert product_price_from_card == product_price_from_message, "Total basket cost does not equal product price from product card"
+        assert product_price_from_card == product_price_from_message, \
+            "Total basket cost does not equal product price from product card"
