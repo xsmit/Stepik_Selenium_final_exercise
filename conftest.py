@@ -21,7 +21,7 @@ def browser(request):
     browser = webdriver.Chrome(options=options)
 
     # Запуск для моего компа
-    # chrome_service_executable_path = "C:\\Users\\yury.ageev\\AppData\\Local\\Programs\\ChromeDriver\\chromedriver.exe"
+    # chrome_service_executable_path = "C:\\Users\\thatsme\\AppData\\Local\\Programs\\ChromeDriver\\chromedriver.exe"
     # chrome_service = Service(executable_path=chrome_service_executable_path)
     # browser = webdriver.Chrome(options=options, service=chrome_service)
 
