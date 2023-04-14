@@ -4,7 +4,7 @@ from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 
 
-# Запуск: pytest -v --tb=line --language=en -m need_review test_product_page.py
+# Запуск: pytest -v --tb=line --language=en test_main_page.py
 
 
 @pytest.mark.login_guest

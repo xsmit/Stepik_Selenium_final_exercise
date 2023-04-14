@@ -6,7 +6,7 @@ from .pages.basket_page import BasketPage
 from .pages.main_page import MainPage
 
 
-# Запуск: pytest -s test_product_page.py
+# Запуск: pytest -v --tb=line --language=en -m need_review test_product_page.py
 
 
 @pytest.mark.need_review

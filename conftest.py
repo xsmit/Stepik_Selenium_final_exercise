@@ -12,19 +12,18 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="function")
 def browser(request):
     user_language = request.config.getoption("language")
-    # browser = None
     print("\nstart browser for test..")
 
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
 
     # Общий вариант запуска
-    # browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome(options=options)
 
     # Запуск для моего компа
-    chrome_service_executable_path = "C:\\Users\\yury.ageev\\AppData\\Local\\Programs\\ChromeDriver\\chromedriver.exe"
-    chrome_service = Service(executable_path=chrome_service_executable_path)
-    browser = webdriver.Chrome(options=options, service=chrome_service)
+    # chrome_service_executable_path = "C:\\Users\\yury.ageev\\AppData\\Local\\Programs\\ChromeDriver\\chromedriver.exe"
+    # chrome_service = Service(executable_path=chrome_service_executable_path)
+    # browser = webdriver.Chrome(options=options, service=chrome_service)
 
     yield browser
     print("\nquit browser..")
